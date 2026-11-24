@@ -7,14 +7,14 @@ Esta carpeta convierte la IA de chat que ya usas (Claude, ChatGPT, Gemini u otra
 Hay dos formas del mismo contenido:
 
 - **`HTML-Creator-agente.md`**: el archivo para cualquier IA de chat.
-- **`html-creator/`**: lo mismo como skill, para Claude y Claude Code.
+- **`html/`**: lo mismo como skill, para Claude y Claude Code. Se usa con `/html`.
 
 ## Cómo usarlo
 
 **Claude (claude.ai)**
 
 - En un proyecto: crea un proyecto y pega el contenido de `HTML-Creator-agente.md` en sus instrucciones, o añade el archivo a sus conocimientos. Luego abre un chat dentro del proyecto.
-- Como skill: descarga [html-creator.zip](https://github.com/bfktrick/HTML-easy-creator/releases/latest/download/html-creator.zip) (o comprime tú la carpeta `html-creator`) y súbelo como skill en los ajustes de Claude.
+- Como skill: descarga [html-creator.zip](https://github.com/bfktrick/HTML-easy-creator/releases/latest/download/html-creator.zip) (o comprime tú la carpeta `html`), abre **Plugins** en la barra lateral izquierda de Claude, pulsa **Subir plugin** y elige el `.zip`. Después empieza tu mensaje con `/html`: «/html Hazme una página con esta guía: …».
 
 **ChatGPT**
 
@@ -31,7 +31,7 @@ Hay dos formas del mismo contenido:
 
 **Claude Code**
 
-- Copia la carpeta `html-creator` en `~/.claude/skills/` (en Windows, `C:\Users\<tu usuario>\.claude\skills\`). Después pídele una página con tu material.
+- Copia la carpeta `html` en `~/.claude/skills/` (en Windows, `C:\Users\<tu usuario>\.claude\skills\`), o descomprime ahí `html-creator.zip`. Después escribe `/html` con tu material.
 
 ## Guardar la página
 

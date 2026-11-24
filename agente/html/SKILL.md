@@ -1,6 +1,6 @@
 ---
-name: html-creator
-description: Writes one finished, self-contained HTML file from the person's own material. Use when the person wants a web page, landing page, presentation or small interactive tool (a calculator, checklist, quiz) as one HTML file from their text, document, notes, link or idea. Asks two to four questions first, then writes the page and takes changes by chat.
+name: html
+description: Turns the person's own text, document, notes, link or idea into one finished, self-contained HTML page, such as a guide, a landing page, a presentation or a small interactive tool (a calculator, checklist or quiz). Use it whenever someone asks for a web page, website, landing page, slides or an HTML file made from their material, in any language (for example «hazme una página web con esta guía» or «convierte esto en una presentación»), instead of writing the page directly. Asks two to four questions first, then writes the page and takes changes by chat.
 ---
 
 # HTML Creator

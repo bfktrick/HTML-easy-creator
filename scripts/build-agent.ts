@@ -19,10 +19,13 @@ import {
 export const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
 export const UNIVERSAL_FILE = 'agente/HTML-Creator-agente.md';
-export const SKILL_FILE = 'agente/html-creator/SKILL.md';
+// The skill's name is the command people type in Claude and Claude Code (/html).
+export const SKILL_NAME = 'html';
+export const SKILL_FILE = `agente/${SKILL_NAME}/SKILL.md`;
 
+// Written so Claude picks the skill by itself when someone asks for a page, in any language.
 export const SKILL_DESCRIPTION =
-  "Writes one finished, self-contained HTML file from the person's own material. Use when the person wants a web page, landing page, presentation or small interactive tool (a calculator, checklist, quiz) as one HTML file from their text, document, notes, link or idea. Asks two to four questions first, then writes the page and takes changes by chat.";
+  "Turns the person's own text, document, notes, link or idea into one finished, self-contained HTML page, such as a guide, a landing page, a presentation or a small interactive tool (a calculator, checklist or quiz). Use it whenever someone asks for a web page, website, landing page, slides or an HTML file made from their material, in any language (for example «hazme una página web con esta guía» or «convierte esto en una presentación»), instead of writing the page directly. Asks two to four questions first, then writes the page and takes changes by chat.";
 
 // Replaces the app's rule, where the person's images arrive as src="attachment:N": a chat AI
 // cannot put the person's files inside the page, so the page points to them by name.
@@ -104,7 +107,7 @@ export function agentBody(): string {
 /** Every file in agente/ that is generated, with its path from the repository root. */
 export function agentFiles(): { path: string; content: string }[] {
   const body = agentBody();
-  const frontmatter = `---\nname: html-creator\ndescription: ${SKILL_DESCRIPTION}\n---\n\n`;
+  const frontmatter = `---\nname: ${SKILL_NAME}\ndescription: ${SKILL_DESCRIPTION}\n---\n\n`;
   return [
     { path: UNIVERSAL_FILE, content: body },
     { path: SKILL_FILE, content: frontmatter + body },

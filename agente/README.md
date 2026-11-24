@@ -7,14 +7,14 @@ This folder turns the chat AI you already use (Claude, ChatGPT, Gemini or anothe
 The same content comes in two forms:
 
 - **`HTML-Creator-agente.md`**: the file for any chat AI.
-- **`html-creator/`**: the same as a skill, for Claude and Claude Code.
+- **`html/`**: the same as a skill, for Claude and Claude Code. You call it with `/html`.
 
 ## How to use it
 
 **Claude (claude.ai)**
 
 - In a project: create a project and paste the content of `HTML-Creator-agente.md` into its instructions, or add the file to its knowledge. Then open a chat inside the project.
-- As a skill: download [html-creator.zip](https://github.com/bfktrick/HTML-easy-creator/releases/latest/download/html-creator.zip) (or compress the `html-creator` folder yourself) and upload it as a skill in Claude's settings.
+- As a skill: download [html-creator.zip](https://github.com/bfktrick/HTML-easy-creator/releases/latest/download/html-creator.zip) (or compress the `html` folder yourself), open **Plugins** in Claude's left sidebar, press **Upload plugin** and choose the `.zip`. Then start your message with `/html`: "/html Make a page from this guide: …".
 
 **ChatGPT**
 
@@ -31,7 +31,7 @@ The same content comes in two forms:
 
 **Claude Code**
 
-- Copy the `html-creator` folder into `~/.claude/skills/` (on Windows, `C:\Users\<your user>\.claude\skills\`). Then ask it for a page from your material.
+- Copy the `html` folder into `~/.claude/skills/` (on Windows, `C:\Users\<your user>\.claude\skills\`), or unzip `html-creator.zip` there. Then type `/html` with your material.
 
 ## Saving the page
 

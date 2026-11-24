@@ -16,10 +16,10 @@ Both follow the same rules, so the pages come out alike.
 **Claude (claude.ai)**
 
 1. Download **[html-creator.zip](https://github.com/bfktrick/HTML-easy-creator/releases/latest/download/html-creator.zip)**.
-2. In Claude's settings, go to the skills section and upload the `.zip`.
-3. In a new chat, give it your material: "Make a page from this guide".
+2. In Claude, open **Plugins** in the left sidebar, press **Upload plugin** and choose the `.zip`.
+3. In a new chat, write **`/html`** followed by your material: "/html Make a page from this guide: …". Claude may also pick it by itself when you ask for a page, but `/html` makes sure.
 
-**Claude Code:** unzip `html-creator.zip` into `~/.claude/skills/` (on Windows, `C:\Users\<your user>\.claude\skills\`) and ask it for a page.
+**Claude Code:** unzip `html-creator.zip` into `~/.claude/skills/` (on Windows, `C:\Users\<your user>\.claude\skills\`). It creates an `html` folder. Then type `/html` with your material.
 
 **ChatGPT, Gemini or any other AI:** download **[HTML-Creator-agente.md](https://github.com/bfktrick/HTML-easy-creator/releases/latest/download/HTML-Creator-agente.md)**, attach it to a chat (or add it to a project, a custom GPT or a Gem) and write "Follow these instructions".
 
@@ -103,7 +103,7 @@ pnpm agent       # rebuild agente/ from the app's rules
 
 The client is React + TypeScript (Vite), the server is a small [Hono](https://hono.dev/) app, and both talk to the official Anthropic and OpenAI SDKs through one common layer.
 
-After changing the rules, run `pnpm agent` and attach a fresh `html-creator.zip` (the `agente/html-creator` folder) and `HTML-Creator-agente.md` to a new release, so the download links above serve the new version.
+After changing the rules, run `pnpm agent` and attach a fresh `html-creator.zip` (the `agente/html` folder, with the folder itself at the root of the zip) and `HTML-Creator-agente.md` to a new release, so the download links above serve the new version.
 
 ## License
 

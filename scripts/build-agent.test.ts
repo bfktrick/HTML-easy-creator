@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { KIND_RULES, pageRules } from '../server/prompts.ts';
-import { agentBody, agentFiles, ROOT, SKILL_DESCRIPTION, SKILL_FILE, UNIVERSAL_FILE } from './build-agent.ts';
+import { agentBody, agentFiles, ROOT, SKILL_DESCRIPTION, SKILL_FILE, SKILL_NAME, UNIVERSAL_FILE } from './build-agent.ts';
 
 function committed(path: string): string {
   try {
@@ -33,7 +33,10 @@ describe('agent in agente/', () => {
     const [universal, skill] = agentFiles();
     expect(universal.path).toBe(UNIVERSAL_FILE);
     expect(skill.path).toBe(SKILL_FILE);
-    expect(skill.content.startsWith('---\nname: html-creator\ndescription: ')).toBe(true);
+    // The name is the command people type (/html), and the folder must carry the same name.
+    expect(SKILL_NAME).toBe('html');
+    expect(SKILL_FILE).toBe(`agente/${SKILL_NAME}/SKILL.md`);
+    expect(skill.content.startsWith(`---\nname: ${SKILL_NAME}\ndescription: `)).toBe(true);
     expect(skill.content.endsWith(`\n---\n\n${universal.content}`)).toBe(true);
     // A plain YAML scalar: no ": " or " #", and within the Agent Skills limit.
     expect(SKILL_DESCRIPTION).not.toMatch(/: | #|[<>]/);

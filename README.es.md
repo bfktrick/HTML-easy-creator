@@ -16,10 +16,10 @@ Las dos siguen las mismas reglas, así que las páginas salen parecidas.
 **Claude (claude.ai)**
 
 1. Descarga **[html-creator.zip](https://github.com/bfktrick/HTML-easy-creator/releases/latest/download/html-creator.zip)**.
-2. En los ajustes de Claude, ve al apartado de skills y sube el `.zip`.
-3. En un chat nuevo, dale tu material: «Hazme una página con esta guía».
+2. En Claude, abre **Plugins** en la barra lateral izquierda, pulsa **Subir plugin** y elige el `.zip`.
+3. En un chat nuevo, escribe **`/html`** seguido de tu material: «/html Hazme una página con esta guía: …». Claude también puede usarla por su cuenta cuando le pides una página, pero con `/html` te aseguras.
 
-**Claude Code:** descomprime `html-creator.zip` en `~/.claude/skills/` (en Windows, `C:\Users\<tu usuario>\.claude\skills\`) y pídele una página.
+**Claude Code:** descomprime `html-creator.zip` en `~/.claude/skills/` (en Windows, `C:\Users\<tu usuario>\.claude\skills\`). Se crea una carpeta `html`. Después escribe `/html` con tu material.
 
 **ChatGPT, Gemini o cualquier otra IA:** descarga **[HTML-Creator-agente.md](https://github.com/bfktrick/HTML-easy-creator/releases/latest/download/HTML-Creator-agente.md)**, adjúntalo a un chat (o añádelo a un proyecto, un GPT personalizado o un Gem) y escribe «Sigue estas instrucciones».
 
@@ -103,7 +103,7 @@ pnpm agent       # vuelve a generar agente/ con las reglas de la app
 
 El cliente es React + TypeScript (Vite) y el servidor una pequeña app de [Hono](https://hono.dev/). Los dos hablan con los SDK oficiales de Anthropic y OpenAI a través de una capa común.
 
-Si cambias las reglas, ejecuta `pnpm agent` y adjunta a una release nueva un `html-creator.zip` recién hecho (la carpeta `agente/html-creator`) y `HTML-Creator-agente.md`, para que los enlaces de descarga de arriba sirvan la versión nueva.
+Si cambias las reglas, ejecuta `pnpm agent` y adjunta a una release nueva un `html-creator.zip` recién hecho (la carpeta `agente/html`, con la propia carpeta en la raíz del zip) y `HTML-Creator-agente.md`, para que los enlaces de descarga de arriba sirvan la versión nueva.
 
 ## Licencia
 
