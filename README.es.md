@@ -2,11 +2,34 @@
 
 [Read in English](README.md)
 
-Una pequeña app de chat que funciona en tu ordenador y convierte una guía, un documento, una página web o una idea suelta en un único archivo HTML listo para publicar tal cual. Primero te hace unas preguntas, escribe la página mientras la ves y luego te deja cambiarla hablando con ella.
+Convierte una guía, un documento, una página web o una idea suelta en un único archivo HTML listo para publicar tal cual. Primero te hace unas preguntas, escribe la página y luego te deja cambiarla hablando con ella.
 
-Usa tu propia clave de Claude (Anthropic) o de OpenAI. Nada pasa por servidores de terceros.
+Puedes usarlo de dos formas:
 
-## Qué hace
+- **En la IA de chat que ya usas, sin clave de API:** una skill para Claude o un archivo de instrucciones para ChatGPT, Gemini u otra. Te basta con el plan que ya tienes.
+- **Como app en tu ordenador**, con tu propia clave de API de Claude o de OpenAI: ventana propia, vista previa en directo, versiones y adjuntos.
+
+Las dos siguen las mismas reglas, así que las páginas salen parecidas.
+
+## En tu IA de chat (sin clave de API)
+
+**Claude (claude.ai)**
+
+1. Descarga **[html-creator.zip](https://github.com/bfktrick/HTML-easy-creator/releases/latest/download/html-creator.zip)**.
+2. En los ajustes de Claude, ve al apartado de skills y sube el `.zip`.
+3. En un chat nuevo, dale tu material: «Hazme una página con esta guía».
+
+**Claude Code:** descomprime `html-creator.zip` en `~/.claude/skills/` (en Windows, `C:\Users\<tu usuario>\.claude\skills\`) y pídele una página.
+
+**ChatGPT, Gemini o cualquier otra IA:** descarga **[HTML-Creator-agente.md](https://github.com/bfktrick/HTML-easy-creator/releases/latest/download/HTML-Creator-agente.md)**, adjúntalo a un chat (o añádelo a un proyecto, un GPT personalizado o un Gem) y escribe «Sigue estas instrucciones».
+
+La carpeta [`agente/`](agente/LEEME.md) explica cada opción paso a paso, cómo guardar la página y en qué se diferencia de la app.
+
+## La app (con tu clave de API)
+
+Una pequeña app de chat que funciona en tu ordenador. Habla directamente con Anthropic u OpenAI usando tu clave; nada pasa por servidores de terceros.
+
+### Qué hace
 
 - **Cuatro tipos de página:** documentos y guías, landings de una sola página, presentaciones (flechas del teclado, pantalla completa, una diapositiva por hoja al imprimir) y pequeñas herramientas interactivas como calculadoras, listas de comprobación o cuestionarios. En «Automático» elige el tipo según lo que le des.
 - **Varias formas de empezar:** pega un texto o un enlace, describe una idea o adjunta archivos PDF, Word (.docx), Markdown o de texto e imágenes. Tus imágenes pueden salir en la página.
@@ -16,13 +39,13 @@ Usa tu propia clave de Claude (Anthropic) o de OpenAI. Nada pasa por servidores 
 - **Un solo archivo:** el CSS, los scripts, los dibujos y tus imágenes van dentro del `.html`. Sin fuentes, scripts ni imágenes externas.
 - Interfaz en **español e inglés**.
 
-## Qué necesitas
+### Qué necesitas
 
 - [Node.js](https://nodejs.org/) 22.18 o posterior
 - [pnpm](https://pnpm.io/installation) 11
 - Una clave de API de [Anthropic](https://console.anthropic.com/) o de [OpenAI](https://platform.openai.com/api-keys)
 
-## Instalar y arrancar
+### Instalar y arrancar
 
 ```sh
 git clone https://github.com/bfktrick/HTML-easy-creator.git
@@ -41,7 +64,7 @@ pnpm start   # o en tu navegador de siempre
 
 Las dos sirven la app en `http://127.0.0.1:4800`. La primera vez, entra en **Ajustes**, pega tu clave y elige un modelo.
 
-## Cómo se usa
+### Cómo se usa
 
 1. Pega tu material o un enlace, o describe lo que quieres. También puedes adjuntar archivos.
 2. Responde a las preguntas o pulsa «Saltar preguntas».
@@ -49,15 +72,11 @@ Las dos sirven la app en `http://127.0.0.1:4800`. La primera vez, entra en **Aju
 4. Pide cambios en el chat. Con **Versiones** vuelves atrás.
 5. Pulsa **Descargar** para guardar el `.html` y súbelo a cualquier sitio que sirva archivos estáticos.
 
-## Cuánto cuesta
+### Cuánto cuesta
 
 La app es gratis. Cada página la cobra tu proveedor de IA a tu clave. Una página larga con un modelo de gama alta y razonamiento alto suele quedarse bastante por debajo de un euro; los cambios por chat cuestan mucho menos porque solo se escribe la parte que cambia.
 
-## Sin clave de API
-
-Si no tienes clave, puedes sacar las mismas páginas de la IA de chat que ya pagas (Claude, ChatGPT, Gemini u otra) o de Claude Code. La carpeta [`agente/`](agente/LEEME.md) trae un archivo de instrucciones que hace que la IA te haga las preguntas, escriba la página con las mismas reglas que la app y la cambie por chat. Allí se explica cómo usarlo en cada una.
-
-## Privacidad y seguridad
+## Privacidad y seguridad (app)
 
 - Tu clave se guarda en tu ordenador, fuera de la carpeta del proyecto (`%APPDATA%\html-creator` en Windows, `~/Library/Application Support/html-creator` en macOS y `~/.config/html-creator` en Linux). Con `HTML_CREATOR_CONFIG_DIR` puedes usar otra carpeta.
 - El servidor local solo escucha en `127.0.0.1` y rechaza peticiones de otras webs.
@@ -83,6 +102,8 @@ pnpm agent       # vuelve a generar agente/ con las reglas de la app
 ```
 
 El cliente es React + TypeScript (Vite) y el servidor una pequeña app de [Hono](https://hono.dev/). Los dos hablan con los SDK oficiales de Anthropic y OpenAI a través de una capa común.
+
+Si cambias las reglas, ejecuta `pnpm agent` y adjunta a una release nueva un `html-creator.zip` recién hecho (la carpeta `agente/html-creator`) y `HTML-Creator-agente.md`, para que los enlaces de descarga de arriba sirvan la versión nueva.
 
 ## Licencia
 

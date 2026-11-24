@@ -1,6 +1,6 @@
 {
   "name": "html-creator",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Chat that turns a guide, document or idea into a ready-to-publish HTML page.",
   "private": true,
   "type": "module",

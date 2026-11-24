@@ -14,7 +14,7 @@ Hay dos formas del mismo contenido:
 **Claude (claude.ai)**
 
 - En un proyecto: crea un proyecto y pega el contenido de `HTML-Creator-agente.md` en sus instrucciones, o añade el archivo a sus conocimientos. Luego abre un chat dentro del proyecto.
-- Como skill: comprime la carpeta `html-creator` en un `.zip` y súbela como skill en los ajustes de Claude.
+- Como skill: descarga [html-creator.zip](https://github.com/bfktrick/HTML-easy-creator/releases/latest/download/html-creator.zip) (o comprime tú la carpeta `html-creator`) y súbelo como skill en los ajustes de Claude.
 
 **ChatGPT**
 
