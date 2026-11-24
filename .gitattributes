@@ -1,0 +1,2 @@
+# Windows only runs .cmd files reliably with CRLF line endings.
+*.cmd text eol=crlf

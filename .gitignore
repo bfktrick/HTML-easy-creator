@@ -1,0 +1,15 @@
+node_modules/
+dist/
+coverage/
+*.log
+.env
+.env.*
+# Ajustes locales del usuario (claves de la IA). Nunca al repo.
+.html-creator/
+.DS_Store
+Thumbs.db
+.playwright-mcp/
+# Copias de trabajo de los agentes de Claude Code.
+.claude/
+# Plan de trabajo interno (no se publica).
+PLAN.md

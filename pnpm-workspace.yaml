@@ -1,0 +1,12 @@
+# Configuración de pnpm (no es un monorepo: solo hay un paquete).
+
+# Supply-chain: no instalar versiones publicadas hace menos de 3 días.
+minimumReleaseAge: 4320
+
+# Scripts de instalación: pnpm 11 no ejecuta ninguno y, si un paquete nuevo trae
+# uno, para la instalación hasta que se decida aquí. Se aprueban solo si son
+# imprescindibles.
+allowBuilds:
+  # Su postinstall solo comprueba el binario nativo, que pnpm ya instala como
+  # dependencia opcional (@esbuild/<plataforma>).
+  esbuild: false
